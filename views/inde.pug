@@ -1,0 +1,16 @@
+extends ../layout/beatiful
+
+block content
+
+  
+   form( action="/users/search", method="GET" class="d-flex")
+     input(type="text" name="q", class="form-control")
+     button(class="btn btn-primary ml-2") search
+   a.btn.btn-primary(href="/users/create") Create
+   ul.pt-3
+    each val in users
+      li 
+        img(src= val.avatar, width="100")
+        span= val.name
+        a(href="/users/" + val.id) View
+         
